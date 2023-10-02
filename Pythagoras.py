@@ -2,9 +2,9 @@ while(True):
     error = False
     try:
         print("I could code this so it changes per what you are trying to calculate but I'm lazy :)")
-        sideA = int(input("please enter side A length"))
-        sideB = int(input("please enter side B length"))
-        sideC = int(input("please enter side C length"))
+        sideA = float(input("please enter side A length"))
+        sideB = float(input("please enter side B length"))
+        sideC = float(input("please enter side C length"))
     except ValueError:
         print("Please Enter an int")
         error = True
