@@ -38,13 +38,13 @@ while(True):
 
 match option:
      case "A":
-        sideA = (sideC * sideC) - (sideB * sideB) 
+        sideA = ((sideC * sideC) - (sideB * sideB)) ** 0.5 
         print(sideA)
      case "B":
-        sideB = (sideC * sideC) - (sideA * sideA)
+        sideB = ((sideC * sideC) - (sideA * sideA)) ** 0.5
         print(sideB) 
      case "C":
-        sideC = (sideA * sideA) + (sideB * sideB)
+        sideC = ((sideA * sideA) + (sideB * sideB)) ** 0.5
         print(sideC)
         
 
