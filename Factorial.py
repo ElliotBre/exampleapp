@@ -4,8 +4,7 @@ newNum = 1
 x = 1
 
 while x <= num:
-    temp = x
-    newNum *= temp
+    newNum *= x
     x += 1
 
 print(f"Factorial of {num} = {newNum}")
