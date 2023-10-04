@@ -37,42 +37,47 @@ def convertHours(split1):
 
 def convertMinutes(split1):
     total = 0
+    print("I am running")
     for i in range(len(split1)):
-        new1 = int(split1[i])
+        new1 = 0
+        new1 += int(split1[i])
         match i:
             case 0:
-                total += ((new1 * 24) * 60) % 1
+                print("adding days")
+                total += ((new1 * 24) * 60) 
             case 1: 
-                total += (new1 * 60) % 1
+                print("adding hours")
+                total += (new1 * 60) 
             case 2:
-                total += new1 % 1
+                print("adding minutes")
+                total += new1 
 
     return total
 
 def convertTime(convert, num):
     utc = []
     match num:
-        case 1:
-            utc.append(convert % 1)
+        case 1: #days - 3
+            utc.append(int(convert))
             convert -= utc[0]
             convert *= 10
-            utc.append(convert % 1)
+            utc.append(int(convert))
             convert -= utc[1]
             convert *= 10
-            utc.append(convert % 1)
-        case 2:
-            utc.append((convert // 24) % 1)
-            convert -= (utc[0] * 24) % 1
-            utc.append(convert % 1)
+            utc.append(int(convert))
+        case 2: #Hours - 2
+            utc.append(int(convert // 24))
+            convert -= (utc[0] * 24)
+            utc.append(int(convert))
             convert -= utc[1]
             convert *= 10
-            utc.append(convert % 1)
-        case 3:
-            utc.append(((convert // 60) // 24) % 1)
+            utc.append(int(convert))
+        case 3: #minutes - 1
+            utc.append(int((convert // 60) // 24))
             convert -= ((utc[0] * 24) * 60) % 1
-            utc.append(((convert // 60) % 1))
+            utc.append(int((convert // 60)))
             convert -= (utc[1] * 60) % 1
-            utc.append(convert % 1)
+            utc.append(int(convert))
     return utc
 
 
