@@ -8,7 +8,10 @@ while flag == False:
         except ValueError:
             print("That is not a number, please enter again. ")
             continue
-        break
+        if taxAmount >= 0:
+            break
+        else:
+            print("Please enter a positive value")
      
      incomeTax = taxDependencies.getIncomeTax(taxAmount)
      print(f"Your income tax will be {incomeTax}, leaving your income at {taxAmount - incomeTax}")
